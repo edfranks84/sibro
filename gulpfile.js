@@ -13,7 +13,6 @@ var gulp = require('gulp'),
 	browserSync = require("browser-sync"),
 	reload  = browserSync.reload,
 	svgmin = require('gulp-svgmin'),
-	minifyCSS = require('gulp-minify-css'),
 	imagemin = require('gulp-imagemin'),
 	jshint = require('gulp-jshint'),
 	pkg = require('./package.json');
@@ -110,7 +109,7 @@ gulp.task('default', function () {
    // Watch .scss files
   //gulp.watch('assets/scss/**/*.scss', ['sass']);
    // Watch image files
-  gulp.watch('assets/images/**', ['imagemin']);
+  // gulp.watch('assets/images/**', ['imagemin']);
    // Watch svg files
   // gulp.watch('assets/images/svg/**', ['svgmin', 'svgstore']);
 });
