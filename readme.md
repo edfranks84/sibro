@@ -6,7 +6,8 @@ To get started is relatively simple. At the moment we are testing the new scaffo
 2. rename the folder from gulp-lunchbox to <project-name>
 3. change the project name in the package.json (this is because gulp will name the js files based on the name in the package.json)
 4. install all the required depancies listed in the package.json `npm install`
-5. run `gulp` and get coding!
+5. run `gulp setup` — this ensures package name is applied to css/js and links to files in the index.html
+6. run `gulp` and get coding!
 
 
 ## Issues
