@@ -11,4 +11,4 @@ To get started is relatively simple. At the moment we are testing the new scaffo
 
 ## Issues
 
-Please report issues here.
+Please report issues here. Errors encountered while installing are generally to do with Gyp. From the looks of things it's a widely reported issue that is not to do with the scaffold we're making but rather one of the dependancies. 
