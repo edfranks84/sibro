@@ -7,8 +7,48 @@
 
 \* ---------------------------------------------- */
 
+h1, h2, h3, h4, h5, h6{
 
+}
 
-.test{
-  @include span(4 of 12);
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+
+}
+
+h4{
+
+}
+
+h5{
+
+}
+
+h6{
+
+}
+
+p{
+	margin-bottom: ms(2);
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+strong{
+	// change if using @fontface
+	font-weight: bold;
+}
+
+em{
+	// change if using @fontface
+	font-style: italic;
 }
