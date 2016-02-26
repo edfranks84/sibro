@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 	clean = require('gulp-clean'),
 	plumber = require('gulp-plumber'),
 	sass = require('gulp-sass'),
+  gutil = require('gulp-util'),
 	rename = require("gulp-rename"),
 	browserSync = require("browser-sync"),
 	reload  = browserSync.reload,
@@ -23,6 +24,37 @@ gulp.task('connect', function() {
     livereload: true
   });
 });
+
+var reportError = function (error) {
+    var lineNumber = (error.lineNumber) ? 'LINE ' + error.lineNumber + ' -- ' : '';
+
+    notify({
+        title: 'Task Failed [' + error.plugin + ']',
+        message: lineNumber + 'See console.',
+        sound: 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
+    }).write(error);
+
+    gutil.beep(); // Beep 'sosumi' again
+
+    // Inspect the error object
+    //console.log(error);
+
+    // Easy error reporting
+    //console.log(error.toString());
+
+    // Pretty error reporting
+    var report = '';
+    var chalk = gutil.colors.white.bgRed;
+
+    report += chalk('TASK:') + ' [' + error.plugin + ']\n';
+    report += chalk('PROB:') + ' ' + error.message + '\n';
+    if (error.lineNumber) { report += chalk('LINE:') + ' ' + error.lineNumber + '\n'; }
+    if (error.fileName)   { report += chalk('FILE:') + ' ' + error.fileName + '\n'; }
+    console.error(report);
+
+    // Prevent the 'watch' task from stopping
+    this.emit('end');
+}
 
 gulp.task('clean-up', function () {
   return gulp.src(['assets/css/*.css', 'assets/js/*.js'], {read: false})
@@ -61,6 +93,9 @@ gulp.task('imagemin', function() {
 // JS concat and minify
 gulp.task('scripts', function() {
   gulp.src(['./assets/js/plugins/*.js', './assets/js/src/*.js'])
+    .pipe(plumber({
+      errorHandler: reportError
+     }))
     .pipe(concat(pkg.name + '.js'))
     .pipe(gulp.dest('./assets/js'))
     .pipe(rename(pkg.name + '.min.js'))
@@ -72,6 +107,9 @@ gulp.task('scripts', function() {
 // CSS concat, auto-prefix and minify
 gulp.task('sass', function() {
     gulp.src('assets/scss/**/*.scss')
+    .pipe(plumber({
+      errorHandler: reportError
+     }))
     .pipe(plumber())
     .pipe(sass({style: 'expanded', includePaths: [ './assets/scss/partials', './assets/scss/modules', './assets/scss/helpers' ], errLogToConsole: true }))
     .pipe(autoprefix('last 2 version'))
@@ -79,6 +117,15 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('assets/css'))
     // .pipe(reload({stream: true}))
     .pipe(notify({message: 'SCSS processed!'}));
+});
+
+//clean up css with nano
+gulp.task('nanocss', ['sass'], function() {
+    return gulp.src('./assets/css/' + pkg.name + '.css')
+        .pipe(nano({discardComments: {removeAll: true}}))
+        .pipe(rename(pkg.name + '.min.css'))
+        .pipe(gulp.dest('./assets/css/'))
+        .pipe(notify({message: 'CSS Nanofied!'}));
 });
 
 gulp.task('svgmin', function() {
@@ -91,25 +138,20 @@ gulp.task('svgmin', function() {
 
 gulp.task('setup', ['sass', 'scripts', 'html']);
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['nanocss'], function() {
 
     browserSync({
         server: "./"
     });
-    gulp.watch('assets/scss/**/*.scss', ['sass']);
+    gulp.watch('assets/scss/**/*.scss', ['nanocss']);
     gulp.watch(['*.html', 'assets/css/**', 'assets/js/**']).on('change', reload);
 });
 
 gulp.task('default', ['connect', 'watch', 'serve']);
 
 gulp.task('default', function () {
-  gulp.start('scripts', 'sass', 'imagemin', 'svgmin', 'serve');
+  gulp.start('scripts', 'nanocss', 'imagemin', 'svgmin', 'serve');
   // Watch .js files
   gulp.watch('assets/js/src/*.js', ['scripts']);
-   // Watch .scss files
-  //gulp.watch('assets/scss/**/*.scss', ['sass']);
-   // Watch image files
-  // gulp.watch('assets/images/**', ['imagemin']);
-   // Watch svg files
-  // gulp.watch('assets/images/svg/**', ['svgmin', 'svgstore']);
 });
+
