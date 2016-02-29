@@ -1,23 +1,23 @@
 var gulp = require('gulp'),
-	notify = require("gulp-notify"),
-	changed = require('gulp-changed'),
-	concat = require('gulp-concat'),
-	autoprefix = require('gulp-autoprefixer'),
-	connect = require('gulp-connect'),
-	inject = require('gulp-inject'),
-	uglify = require('gulp-uglify'),
-	del = require('del'),
-	plumber = require('gulp-plumber'),
-	sass = require('gulp-sass'),
+  notify = require("gulp-notify"),
+  changed = require('gulp-changed'),
+  concat = require('gulp-concat'),
+  autoprefix = require('gulp-autoprefixer'),
+  connect = require('gulp-connect'),
+  inject = require('gulp-inject'),
+  uglify = require('gulp-uglify'),
+  del = require('del'),
+  plumber = require('gulp-plumber'),
+  sass = require('gulp-sass'),
   nano = require('gulp-cssnano'),
   gutil = require('gulp-util'),
-	rename = require("gulp-rename"),
-	browserSync = require("browser-sync"),
-	reload  = browserSync.reload,
-	svgmin = require('gulp-svgmin'),
-	imagemin = require('gulp-imagemin'),
-	jshint = require('gulp-jshint'),
-	pkg = require('./package.json');
+  rename = require("gulp-rename"),
+  browserSync = require("browser-sync"),
+  reload  = browserSync.reload,
+  svgmin = require('gulp-svgmin'),
+  imagemin = require('gulp-imagemin'),
+  jshint = require('gulp-jshint'),
+  pkg = require('./package.json');
 
 gulp.task('connect', function() {
   connect.server({
@@ -59,7 +59,9 @@ var reportError = function (error) {
 
 gulp.task('clean', function () {
   return del([
-    'assets/css/my_project.css'
+    'assets/css/my_project.css',
+    'assets/js/my_project.js',
+    'assets/js/my_project.min.js'
   ]);
 });
 
