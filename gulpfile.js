@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	connect = require('gulp-connect'),
 	inject = require('gulp-inject'),
 	uglify = require('gulp-uglify'),
-	clean = require('gulp-clean'),
+	del = require('del'),
 	plumber = require('gulp-plumber'),
 	sass = require('gulp-sass'),
   nano = require('gulp-cssnano'),
@@ -57,12 +57,13 @@ var reportError = function (error) {
     this.emit('end');
 }
 
-gulp.task('clean-up', function () {
-  return gulp.src(['assets/css/*.css', 'assets/js/*.js'], {read: false})
-    .pipe(clean());
+gulp.task('clean', function () {
+  return del([
+    'assets/css/my_project.css'
+  ]);
 });
 
-gulp.task('html', ['clean-up'], function () {
+gulp.task('html', ['clean'], function () {
   var target = gulp.src('index.html');
   var sources = gulp.src(['./assets/js/' + pkg.name + '.js', './assets/css/*.css'], {read: false});
   
