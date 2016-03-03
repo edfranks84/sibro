@@ -19,7 +19,9 @@ $monaco: Monaco, Consolas, "Lucida Console", monospace;
 
 // User defined ------------------------------------------ //
 
-
+// overwrite defaults for modular scale
+$ms-base: 1em;
+$ms-ratio: 1.2;
 
 // Base font attributes ---- //
 
