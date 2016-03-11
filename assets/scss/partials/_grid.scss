@@ -46,11 +46,11 @@ $grid-column-namespace: "g-";
 $grid-width: $max-width;
 
 //some defaults to breakpoint scss
-@include bkpt-set('to ems', true);
-@include bkpt-set('no query fallbacks', true);
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
 
 // set basics followed by customs 
-$BREAKPOINTS: (
+$breakpoints: (
   tiny: 320px,
   480: 480px,
   640: 640px,

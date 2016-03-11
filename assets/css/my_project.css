@@ -123,7 +123,6 @@ img, object, embed {
   max-width: 100%; }
 
 blockquote {
-  background: #e3e3e3;
   color: #FFFFFF;
   font-size: 1.1em;
   font-style: italic;
@@ -143,9 +142,9 @@ a {
   text-decoration: none;
   /* Improve readability when focused and hovered in all browsers: h5bp.com/h */ }
   a:hover {
-    color: green; }
-  a:focus {
     color: purple; }
+  a:focus {
+    color: green; }
   a:focus, a:active {
     outline: none; }
 
@@ -213,10 +212,16 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
   additionally and maps we might want to use. Then we specificy the typographic scales we want.
 
 \* ---------------------------------------------- */
-.test {
-  width: 31.42857%;
-  float: left;
-  margin-right: 2.85714%; }
+p {
+  margin-bottom: 1.44em; }
+  p:last-child {
+    margin-bottom: 0; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
 
 /* -----------------------------------------
 	10.0. Nav
@@ -234,15 +239,82 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 /* -----------------------------------------
 	12.0. Content
 ----------------------------------------- */
-body {
-  background: orange; }
-
 /* ---------------------------------------------- *
   Partial: buttons
 
   This is a work-in-progress. Please deploy your own method or use my exaple below. 
 
+  Namespace structure
+  [interaction][-Button][-Variant]
+
 \* ---------------------------------------------- */
+.int-Button {
+  display: inline-block; }
+  .int-Button-black {
+    color: #2f2f2f;
+    background-color: transparent;
+    border-color: #2f2f2f; }
+    .int-Button-black:hover, .int-Button-black:focus, .int-Button-black:active, .int-Button-black.active,
+    .open > .int-Button-black.dropdown-toggle {
+      color: #2f2f2f;
+      background-color: transparent;
+      border-color: #101010; }
+    .int-Button-black:active, .int-Button-black.active,
+    .open > .int-Button-black.dropdown-toggle {
+      background-image: none; }
+    .int-Button-black.disabled, .int-Button-black.disabled:hover, .int-Button-black.disabled:focus, .int-Button-black.disabled:active, .int-Button-black.disabled.active, .int-Button-black[disabled], .int-Button-black[disabled]:hover, .int-Button-black[disabled]:focus, .int-Button-black[disabled]:active, .int-Button-black[disabled].active,
+    fieldset[disabled] .int-Button-black,
+    fieldset[disabled] .int-Button-black:hover,
+    fieldset[disabled] .int-Button-black:focus,
+    fieldset[disabled] .int-Button-black:active,
+    fieldset[disabled] .int-Button-black.active {
+      background-color: transparent;
+      border-color: #2f2f2f; }
+    .int-Button-black .badge {
+      color: transparent;
+      background-color: #2f2f2f; }
+    .int-Button-black:hover {
+      color: #FFFFFF;
+      background-color: #61459b;
+      border-color: #61459b; }
+      .int-Button-black:hover:hover, .int-Button-black:hover:focus, .int-Button-black:hover:active, .int-Button-black:hover.active,
+      .open > .int-Button-black:hover.dropdown-toggle {
+        color: #FFFFFF;
+        background-color: #4b3578;
+        border-color: #463271; }
+      .int-Button-black:hover:active, .int-Button-black:hover.active,
+      .open > .int-Button-black:hover.dropdown-toggle {
+        background-image: none; }
+      .int-Button-black:hover.disabled, .int-Button-black:hover.disabled:hover, .int-Button-black:hover.disabled:focus, .int-Button-black:hover.disabled:active, .int-Button-black:hover.disabled.active, .int-Button-black:hover[disabled], .int-Button-black:hover[disabled]:hover, .int-Button-black:hover[disabled]:focus, .int-Button-black:hover[disabled]:active, .int-Button-black:hover[disabled].active,
+      fieldset[disabled] .int-Button-black:hover,
+      fieldset[disabled] .int-Button-black:hover:hover,
+      fieldset[disabled] .int-Button-black:hover:focus,
+      fieldset[disabled] .int-Button-black:hover:active,
+      fieldset[disabled] .int-Button-black:hover.active {
+        background-color: #61459b;
+        border-color: #61459b; }
+      .int-Button-black:hover .badge {
+        color: #61459b;
+        background-color: #FFFFFF; }
+
+.int-Button-small {
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  line-height: 1;
+  border-radius: 0; }
+
+.int-Button-med {
+  padding: 0.875em 6.19174em;
+  font-size: 1em;
+  line-height: 1.2;
+  border-radius: 0; }
+
+.int-Button-large {
+  padding: 1em 18.48843em;
+  font-size: 1em;
+  line-height: 1.2;
+  border-radius: 0; }
+
 /* -----------------------------------------
 	13.0. Footer
 ----------------------------------------- */
