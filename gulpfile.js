@@ -60,6 +60,7 @@ var reportError = function (error) {
 gulp.task('clean', function () {
   return del([
     'assets/css/my_project.css',
+    'assets/css/my_project.min.css',
     'assets/js/my_project.js',
     'assets/js/my_project.min.js'
   ]);
