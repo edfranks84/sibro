@@ -26,8 +26,7 @@
 
 
 //Some utility
-.is-Padded{}
-.is-Padded-top{}
-.is-Padded-bottom{}
-
-.is-Selected{}
+.is-Padded{
+	padding-top: em(50);
+	padding-bottom: em(50);
+}

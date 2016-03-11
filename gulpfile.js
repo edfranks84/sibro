@@ -68,7 +68,7 @@ gulp.task('clean', function () {
 
 gulp.task('html', ['clean'], function () {
   var target = gulp.src('index.html');
-  var sources = gulp.src(['./assets/js/' + pkg.name + '.js', './assets/css/*.css'], {read: false});
+  var sources = gulp.src(['./assets/js/' + pkg.name + '.js', './assets/css/' + pkg.name + '.css'], {read: false});
   
   return target.pipe(inject(sources))
     .pipe(gulp.dest('./'))
