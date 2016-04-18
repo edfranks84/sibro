@@ -1,0 +1,23 @@
+{
+  "name": "gulp-lunchbox",
+  "version": "2.1.0",
+  "authors": [
+    "Mat Doidge <hello@visualdecree.co.uk>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "breakpoint-sass": "^2.5.0",
+    "modular-scale": "^2.1.1",
+    "susy": "^2.2.2"
+  },
+  "devDependencies": {
+    "breakpoint-sass": "^2.5.0"
+  }
+}

@@ -16,10 +16,10 @@
 	}
 	
 	body {
-		color: $black;
-		font-family: $base-font-family;
-		font-size: $base-font-size+px;
-		line-height: $base-line-height;
+		color: $s-Color-black;
+		font-family: $s-Font-family;
+		font-size: $s-Font-size+px;
+		line-height: $s-Font-lineheight;
 		margin: 0;	
 	}
 
@@ -43,8 +43,7 @@
 	}	
 	
 	blockquote {
-		background: $blockquote;
-		color: $white;
+		color: $s-Color-white;
 		font-size: 1.1em;
 		font-style: italic;
 		margin: 0 0 1.250em 1.250em;
@@ -65,20 +64,20 @@
 	------------------------------------------ */
 
 	a {
-		color: $link;
+		color: $s-Color_link;
 		cursor: pointer;
 		text-decoration:none;
 		&:visited {
 
 		}
 		&:hover {
-			color: $link-hover;
+			color: $s-Color_link-hover;
 		}
 		&:active {
 			
 		}
 		&:focus {
-			color: $link-focus;
+			color: $s-Color_link-focus;
 		}
 		/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 		&:focus,
@@ -93,7 +92,7 @@
 	
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 	.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
-		color: $link;
+		color: $s-Color_link;
 	}
 
 

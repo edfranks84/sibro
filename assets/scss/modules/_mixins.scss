@@ -126,7 +126,7 @@
   @include prefixer(transition-delay, $times, webkit moz spec);
 }
 
-@function em($pixels, $context: $base-font-size) {
+@function em($pixels, $context: $s-Font-size) {
   @return #{$pixels/$context}em;
 }
 

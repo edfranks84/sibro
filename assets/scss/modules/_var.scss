@@ -20,24 +20,23 @@ $monaco: Monaco, Consolas, "Lucida Console", monospace;
 // User defined ------------------------------------------ //
 
 // overwrite defaults for modular scale
+// http://www.modularscale.com/
 $ms-base: 1em;
 $ms-ratio: 1.2;
 
 // Base font attributes ---- //
+$s-Font-family: ;
+$s-Font-size: 16;
+$s-Font-lineheight: 1.6;
 
-$base-font-family: ;
-$base-font-size: 16;
-$base-line-height: 1.6;
-$blockquote: #e3e3e3;
+// Base colours ---- s represents 'Site' //
+$s-Color-white: #FFFFFF;
+$s-Color-black: #2f2f2f;
+$s-Color-base: #61459b;
+$s-Color-comp: #326e50;
+$s-Color-grey: #CCCCCC;
 
-// Base colours ---- //
-
-$white: #FFFFFF;
-$black: #2f2f2f;
-$base-color: #61459b;
-$comp-color: #326e50;
-$lightGrey: #CCCCCC;
-
-$link: blue;
-$link-hover: green;
-$link-focus: purple;
+//links
+$s-Color_link: blue;
+$s-Color_link-focus: green;
+$s-Color_link-hover: purple;

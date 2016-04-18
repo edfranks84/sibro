@@ -4,51 +4,36 @@
 
   This is a work-in-progress. Please deploy your own method or use my exaple below. 
 
+  Namespace structure
+  [interaction][-Button][-Variant]
+
 \* ---------------------------------------------- */
 
-.btn{
+.int-Button{
 	display: inline-block;
 
-	&--black{
+	&-black{
 		// text, background, border
-		@include button-variant($black, transparent, $black);
+		@include button-variant($s-Color-black, transparent, $s-Color-black);
 
 		&:hover{
-			@include button-variant($white, $base-color, $base-color);
-		}
-	}
-
-	&--grey{
-		// text, background, border
-		@include button-variant(darken($lightGrey, 60), darken($lightGrey, 20), darken($lightGrey, 40));
-
-		&:hover{
-			@include button-variant($white, $base-color, $base-color);
-		}
-	}
-
-	&--blue{
-		// text, background, border
-		@include button-variant($base-color, transparent, $base-color);
-
-		&:hover{
-			@include button-variant($comp-color, $white, $comp-color);
+			@include button-variant($s-Color-white, $s-Color-base, $s-Color-base);
 		}
 	}
 }
 
 
-.btn{
+.int-Button{
 
-	&--small{
+	&-small{
 		@include button-size(em(8), ms(1), em(16), 1, 0);
 	}
 
-	&--med{
+	&-med{
 		@include button-size(em(14), ms(10), em(16), 1.2, 0);
 	}
 
-  	&--large{
+  	&-large{
 		@include button-size(em(16), ms(16), em(16), 1.2, 0);
 	}
 }

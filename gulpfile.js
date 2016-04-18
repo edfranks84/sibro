@@ -60,6 +60,7 @@ var reportError = function (error) {
 gulp.task('clean', function () {
   return del([
     'assets/css/my_project.css',
+    'assets/css/my_project.min.css',
     'assets/js/my_project.js',
     'assets/js/my_project.min.js'
   ]);
@@ -67,7 +68,7 @@ gulp.task('clean', function () {
 
 gulp.task('html', ['clean'], function () {
   var target = gulp.src('index.html');
-  var sources = gulp.src(['./assets/js/' + pkg.name + '.js', './assets/css/*.css'], {read: false});
+  var sources = gulp.src(['./assets/js/' + pkg.name + '.js', './assets/css/' + pkg.name + '.css'], {read: false});
   
   return target.pipe(inject(sources))
     .pipe(gulp.dest('./'))
@@ -124,13 +125,13 @@ gulp.task('sass', function() {
 });
 
 //clean up css with nano
-gulp.task('nanocss', ['sass'], function() {
-    return gulp.src('./assets/css/' + pkg.name + '.css')
-        .pipe(nano({discardComments: {removeAll: true}}))
-        .pipe(rename(pkg.name + '.min.css'))
-        .pipe(gulp.dest('./assets/css/'))
-        .pipe(notify({message: 'CSS Nanofied!'}));
-});
+// gulp.task('nanocss', ['sass'], function() {
+//     return gulp.src('./assets/css/' + pkg.name + '.css')
+//         .pipe(nano({discardComments: {removeAll: true}}))
+//         .pipe(rename(pkg.name + '.min.css'))
+//         .pipe(gulp.dest('./assets/css/'))
+//         .pipe(notify({message: 'CSS Nanofied!'}));
+// });
 
 gulp.task('svgmin', function() {
     return gulp.src('assets/images/svg/*.svg')
@@ -142,19 +143,19 @@ gulp.task('svgmin', function() {
 
 gulp.task('setup', ['sass', 'scripts', 'html']);
 
-gulp.task('serve', ['nanocss'], function() {
+gulp.task('serve', ['sass'], function() {
 
     browserSync({
         server: "./"
     });
-    gulp.watch('assets/scss/**/*.scss', ['nanocss']);
+    gulp.watch('assets/scss/**/*.scss', ['sass']);
     gulp.watch(['*.html', 'assets/css/**', 'assets/js/**']).on('change', reload);
 });
 
 gulp.task('default', ['connect', 'watch', 'serve']);
 
 gulp.task('default', function () {
-  gulp.start('scripts', 'nanocss', 'imagemin', 'svgmin', 'serve');
+  gulp.start('scripts', 'sass', 'imagemin', 'svgmin', 'serve');
   // Watch .js files
   gulp.watch('assets/js/src/*.js', ['scripts']);
 });
