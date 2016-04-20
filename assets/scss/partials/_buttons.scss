@@ -12,7 +12,7 @@
 .int-Button{
 	display: inline-block;
 
-	&-black{
+	&_Black{
 		// text, background, border
 		@include button-variant($s-Color-black, transparent, $s-Color-black);
 
@@ -25,15 +25,15 @@
 
 .int-Button{
 
-	&-small{
+	&_Small{
 		@include button-size(em(8), ms(1), em(16), 1, 0);
 	}
 
-	&-med{
+	&_Med{
 		@include button-size(em(14), ms(10), em(16), 1.2, 0);
 	}
 
-  	&-large{
+  	&_Large{
 		@include button-size(em(16), ms(16), em(16), 1.2, 0);
 	}
 }
