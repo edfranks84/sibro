@@ -15,6 +15,8 @@ var gulp = require('gulp'),
   browserSync = require("browser-sync"),
   reload  = browserSync.reload,
   svgmin = require('gulp-svgmin'),
+  svgstore = require('gulp-svgstore'),
+  cheerio = require('gulp-cheerio'),
   imagemin = require('gulp-imagemin'),
   jshint = require('gulp-jshint'),
   pkg = require('./package.json');
@@ -117,7 +119,7 @@ gulp.task('sass', function() {
      }))
     .pipe(plumber())
     .pipe(sass({style: 'expanded', includePaths: [ './assets/scss/partials', './assets/scss/modules', './assets/scss/helpers' ], errLogToConsole: true }))
-    .pipe(autoprefix('last 2 version'))
+    .pipe(autoprefix('last 3 version'))
     .pipe(rename(pkg.name + '.css'))
     .pipe(gulp.dest('assets/css'))
     // .pipe(reload({stream: true}))
@@ -132,6 +134,19 @@ gulp.task('sass', function() {
 //         .pipe(gulp.dest('./assets/css/'))
 //         .pipe(notify({message: 'CSS Nanofied!'}));
 // });
+gulp.task('svgstore', function () {
+    return gulp
+        .src('assets/images/svgsprite/*.svg')
+        .pipe(svgmin())
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(svgstore({ inlineSvg: true }))
+        .pipe(gulp.dest('assets/images'));
+});
 
 gulp.task('svgmin', function() {
     return gulp.src('assets/images/svg/*.svg')
@@ -155,7 +170,7 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('default', ['connect', 'watch', 'serve']);
 
 gulp.task('default', function () {
-  gulp.start('scripts', 'sass', 'imagemin', 'svgmin', 'serve');
+  gulp.start('scripts', 'sass', 'imagemin', 'svgmin', 'serve', 'svgstore');
   // Watch .js files
   gulp.watch('assets/js/src/*.js', ['scripts']);
 });
