@@ -1,39 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- inject:css -->
-  <link rel="stylesheet" href="/assets/css/siddith.css">
-  <!-- endinject -->
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/assets/css/sibro.css">
+        <!-- endinject -->
+        <script src="/assets/js/vendor/modernizr.js"></script>
+        <script src="/assets/js/vendor/jquery-2.2.0.min.js"></script>
+        <!-- inject:js -->
+        <script src="/assets/js/sibro.js"></script>
+        <script src="https://use.typekit.net/igg6weu.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <!-- endinject -->
+    </head>
+    <body>
+        <section class="hero">
+            <div class="homeVideoBG">
+                <!-- <video id="video" class="homepage-video--desktop" autoplay="autoplay" loop="loop" poster="http://www.mrbandfriends.co.uk/app/uploads/2015/11/home_video_poster.jpg" width="100%" height="auto">
+                    <source src="http://www.mrbandfriends.co.uk/app/uploads/2015/11/WhereNext_SkyLoop.webm" type="video/webm">
+                    <source src="http://www.mrbandfriends.co.uk/app/uploads/2015/11/WhereNext_SkyLoop.mp4" type="video/mp4">
+                    <source src="http://www.mrbandfriends.co.uk/app/uploads/2015/11/WhereNext_SkyLoop.ogv" type="video/ogg">
+                </video> -->
+            </div>
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <div class="logo-wrap">
+                            <a href="#"><img src="/assets/images/svg/sibro-logo.svg"></a>
+                        </div>
+                    </div>
+                    <nav class="main-nav">
+                        <div class="nav" id="navInsmenu">
+                            <ul id="menu" class="menu">
+                                <li class="nodiv liLinkActive" id="menu0"><a class="linkActive" href="/" title="Home">Home</a></li>
+                                <li class="nodiv" id="menu2"><a href="#" title="Services">Services</a></li>
+                                <li class="nodiv" id="menu4"><a href="#" title="Blog">Our Work</a></li>
+                                <li class="nodiv" id="menu5"><a href="#" title="Contact Us">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="nav-button">
+                        <button class="hamburger hamburger--emphatic" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="header-social">
+                        <div class="social-icon twitter">
+                            <a href="#">
+                                <svg viewBox="0 0 49.652 49.652">
+                                    <use xlink:href="/assets/images/svgsprite.svg#twitter"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="social-icon linkedin">
+                            <a href="#">
+                                <svg viewBox="0 0 49.652 49.652">
+                                    <use xlink:href="/assets/images/svgsprite.svg#linkedin"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="social-icon facebook">
+                            <a href="#">
+                                <svg viewBox="0 0 49.652 49.652">
+                                    <use xlink:href="/assets/images/svgsprite.svg#facebook"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="hero-text">
+                <div class="hero-text__inner">
+                    <h1>Design For Hire</h1>
+                    <h2>User Centered Design Specialists</h2>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <div class="down-icon">
+                    <svg viewBox="0 0 352 512">
+                       <use xlink:href="/assets/images/svgsprite.svg#mouse"></use>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <div class="about__content">
+                    <div class="section-title">
+                        <h2 data-title="about">About</h2>
+                    </div>
+                    <p>We are a fast moving design consultancy based in London specializing in UX Research, Interaction and UI design. We pay special attention to our client’s needs resulting in the design of innovative applications across multiple channels, working with startups to global enterprise companies.</p>
+                </div>
+                <div class="about__image">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/about-img.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="worked-with">
+            <div class="container">
+                <div class="section-title">
+                        <h4>Who we've worked with</h4>
+                </div>
+                <div class="worked-with__wrap">
+                    <div class="worked-with__image">
+                        <img src="/assets/images/william-hill.png">
+                    </div>
+                    <div class="worked-with__image">
+                        <img src="/assets/images/essensys.png">
+                    </div>
+                    <div class="worked-with__image">
+                        <img src="/assets/images/credit-suisse.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-title="Services">Services</h2>
+                </div>
+                <div class="services-wrap">
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            icon
+                        </div>
+                        <div class="service-item__content">
+                            <h3>Research</h3>
+                            <p>Using a collaborative approach to understand the culture of your business, company objectives and the real answers to your user’s needs.</p>
+                            <div class="button border-button green">
+                                <a href="#">Research</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            icon
+                        </div>
+                        <div class="service-item__content">
+                            <h3>Interaction</h3>
+                            <p>User experience designers work closely with researchers to truly understand the design concepts of our client’s complex systems</p>
+                            <div class="button border-button green">
+                                <a href="#">Interaction</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            icon
+                        </div>
+                        <div class="service-item__content">
+                            <h3>Visuals</h3>
+                            <p>Once the structure of the application is designed, the specialist creative designers then take over turning the platform into an eye catching experience.</p>
+                            <div class="button border-button green">
+                                <a href="#">Visuals</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            icon
+                        </div>
+                        <div class="service-item__content">
+                            <h3>Build</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                            <div class="button border-button green">
+                                <a href="#">Build</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            icon
+                        </div>
+                        <div class="service-item__content">
+                            <h3>Data Visualization</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                            <div class="button border-button green">
+                                <a href="#">Data Visualization</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            icon
+                        </div>
+                        <div class="service-item__content">
+                            <h3>Experience Strategy</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                            <div class="button border-button green">
+                                <a href="#">Experience Strategy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="work">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-title="Our Work">Our Work</h2>
+                </div>
+                <div class="work-content">
+                    <div class="work-carousel">
+                        <div class="work-item-wrap">
+                            <div class="work-item">
+                                <div class="work-item__image"><img src="/assets/images/app-concept.jpg"></div>
+                                <div class="work-item__info">
+                                    <div class="work-item__inner">
+                                        <div class="work-item__logo">
+                                            <img src="/assets/images/essensys-white.png">
+                                        </div>
+                                        <div class="work-item__title">
+                                            <h3>Financial software app at Thomson Reuters</h3>
+                                        </div>
+                                        <div class="button border-button green">
+                                            <a href="#">More Info »</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-item-wrap">
+                            <div class="work-item">
+                                <div class="work-item__image"><img src="/assets/images/app-concept2.jpg"></div>
+                                <div class="work-item__info">
+                                    <div class="work-item__inner">
+                                        <div class="work-item__logo">
+                                            <img src="/assets/images/credit-suisse-white.png">
+                                        </div>
+                                        <div class="work-item__title">
+                                            <h3>Production of a style guideline for Credit Suisse</h3>
+                                        </div>
+                                        <div class="button border-button green">
+                                            <a href="#">More Info »</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-item-wrap">
+                            <div class="work-item">
+                                <div class="work-item__image"><img src="/assets/images/style-guide.jpg"></div>
+                                <div class="work-item__info">
+                                    <div class="work-item__inner">
+                                        <div class="work-item__logo">
+                                            <img src="/assets/images/william-hill-white.png">
+                                        </div>
+                                        <div class="work-item__title">
+                                            <h3>Visual design project for William Hill</h3>
+                                        </div>
+                                        <div class="button border-button green">
+                                            <a href="#">More Info »</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-item-wrap">
+                            <div class="work-item">
+                                <div class="work-item__image"><img src="/assets/images/app-concept2.jpg"></div>
+                                <div class="work-item__info">
+                                    <div class="work-item__inner">
+                                        <div class="work-item__logo">
+                                            <img src="/assets/images/credit-suisse-white.png">
+                                        </div>
+                                        <div class="work-item__title">
+                                            <h3>Production of a style guideline for Credit Suisse</h3>
+                                        </div>
+                                        <div class="button border-button green">
+                                            <a href="#">More Info »</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-title="Contact">Contact</h2>
+                </div>
+                <div class="enquiries">
+                    <h4>Working With Us</h4>
+                    <p>For new business enquiries in Europe or America please email us below</p>
+                    <h6><a href="#">newbusiness@sibro.com</a></h6>
+                    <div class="button border-button white">
+                        <a href="#">Email New Business »</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="section-title">
+                    <h4>Our Offices</h4>
+                </div>
+                <div class="offices__wrap">
+                    <div class="office__item london">
+                        <div class="office__detail">
+                            <h3>London</h3>
+                            <h5 class="address">150 Minories, London, EC3N 1LS</h5>
+                            <h5>+44 207 347 5112<br/><a href="mailto:info@sibro.com">info@sibro.com</a></h5>
+                        </div>
+                        <div class="office__map"><span></span></div>
+                    </div>
+                    <div class="office__item new-york">
+                        <div class="office__detail">
+                            <h3>New York</h3>
+                            <h5 class="address">85 Broad St, New York, NY 10004</h5>
+                            <h5><a href="mailto:info@sibro.com">info@sibro.com</a></h5>
+                        </div>
+                        <div class="office__map"><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__info">
+                    <p>© 2016 Sibro</p>
+                </div>
+                <div class="footer__logo">
+                    <a href="#"><img src="/assets/images/svg/sibro-logo.svg"></a>
+                </div>
+                <div class="footer__social">
+                    <div class="social-icon twitter">
+                        <svg viewBox="0 0 49.652 49.652">
+                           <use xlink:href="/assets/images/svgsprite.svg#twitter"></use>
+                        </svg>
+                    </div>
+                    <div class="social-icon linkedin">
+                        <svg viewBox="0 0 49.652 49.652">
+                           <use xlink:href="/assets/images/svgsprite.svg#linkedin"></use>
+                        </svg>
+                    </div>
+                    <div class="social-icon facebook">
+                        <svg viewBox="0 0 49.652 49.652">
+                           <use xlink:href="/assets/images/svgsprite.svg#facebook"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <nav class="mobile-nav">
+            <div class="nav" id="navInsmenu">
+                <ul id="menu" class="menu">
+                    <li class="nodiv liLinkActive" id="menu0"><a class="linkActive" href="/" title="Home">Home</a></li>
+                    <li class="nodiv" id="menu2"><a href="#" title="Services">Services</a></li>
+                    <li class="nodiv" id="menu4"><a href="#" title="Blog">Our Work</a></li>
+                    <li class="nodiv" id="menu5"><a href="#" title="Contact Us">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <script>
+        $(".image-wrapper").imageBg();
+        $('.homeVideoBG').vide({
+            mp4: "http://www.mrbandfriends.co.uk/app/uploads/2015/11/WhereNext_SkyLoop.mp4",
+            poster: "http://www.mrbandfriends.co.uk/app/uploads/2015/11/home_video_poster.jpg"
+        }, {
+            playbackRate: 1,
+            muted: true,
+            loop: true,
+            autoplay: true,
+            posterType: "jpg",
+            position: '50% 50%', // Similar to the CSS `background-position` property.
+            resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+            bgColor: 'transparent' // Allow custom background-color for Vide div,
+        });
+        // $('.homeVideoBG').vide({
+        //     mp4: "http://www.mrbandfriends.co.uk/app/uploads/2015/11/WhereNext_SkyLoop.mp4",
+        //     poster: "http://www.mrbandfriends.co.uk/app/uploads/2015/11/home_video_poster.jpg"
+        // });
 
-	<script src="/assets/js/vendor/modernizr.js"></script>
-	<script src="/assets/js/vendor/jquery-1.11.2.min.js"></script>
-	<!-- inject:js -->
-  <script src="/assets/js/siddith.js"></script>
-  <!-- endinject -->
-</head>
-<body>
-	<h1>Lunchbox Scaffold v2.1</h1>
-  <p>Updated 11/03/16</p>
+        $('.work-carousel').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            nextArrow: '<div class="slick-next"></div>',
+            prevArrow: '<div class="slick-prev"></div>',
+            // autoplay: true,
+            // autoplaySpeed: 6000,
+            responsive: [
+                {
+                    breakpoint: 1100,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0px',
+                        slidesToShow: 2
+                    }
+                },
+                    {
+                        breakpoint: 800,
+                        settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+        $(".work-item__image").imageBg();
+        $(window).on('resize load', function(){
+            var imageWidth = $(".image-wrapper").width();
+            $(".image-wrapper").height(imageWidth + "px");
 
-  <div class="test">
-    <h1>Test</h1>
-  </div>
+            var workCircle = $(".work-item").width();
+            $(".work-item").height(workCircle + "px");
 
-	<!-- triggers the measurement plugin for screen sizes -->
-    <!-- can be removed for main build unless otherwise needed -->
-    <script>
-    $.getScript( "/assets/js/helpers/measurethisshiz.js", function( data, textStatus, jqxhr ) {
-        console.log( textStatus ); // Success
-        console.log( jqxhr.status ); // 200
-        console.log( "Measurethisshiz - Load was performed." );
-      });
-    // trigger measurement
-    $(window).load(function(){
-      // $("body").MeasureThisShiz();
-    });
-    </script>
-</body>
+            // var responsiveWidth = Modernizr.mq('(min-width: 480px)');
+            // if (responsiveWidth === true) {
+            //    $(".service-item").matchHeight();
+            // }
+        });
+        $(document).ready(function(){
+            var responsiveWidth = Modernizr.mq('(min-width: 550px)');
+            if (responsiveWidth === true) {
+               $(".service-item").matchHeight();
+            }  
+            $(".touchevents .office__item").on('click', function(){
+              $(".service-box").removeClass("active");
+              $(this).addClass("active");
+            });
+            function showMenu(){
+              var menuOpen = false;
+              $(".nav-button").on("click", function(){
+                if(menuOpen){
+                  $(".hamburger").removeClass("is-active");
+                  $(document.body).removeClass("show-menu");
+                }
+                else{
+                  $(".hamburger").addClass("is-active");  
+                  $(document.body).addClass("show-menu"); 
+                }
+                menuOpen = !menuOpen;
+              });
+              var responsiveWidth = Modernizr.mq('(min-width: 920px)');
+              if (responsiveWidth === true) {
+                $(document.body).removeClass("show-menu");
+                $(".hamburger").removeClass("is-active");
+              }
+            }
+            showMenu();
+            window.onresize = showMenu;
+
+            $(function() {
+              var header = $("header");
+              $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                
+                if (scroll >= 200) {
+                  header.addClass("scrolled");
+                } else {
+                  header.removeClass("scrolled");
+                }
+              });
+            });
+            $(".mobile-nav .menu>li").each(function(i, el){
+                $(el).css( "animation-delay", i * 200 + 300 + "ms");
+            });
+
+
+
+        });
+
+
+        </script>
+    
+    </body>
 </html>

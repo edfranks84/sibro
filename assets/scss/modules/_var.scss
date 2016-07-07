@@ -25,18 +25,19 @@ $ms-base: 1em;
 $ms-ratio: 1.2;
 
 // Base font attributes ---- //
-$s-Font-family: ;
-$s-Font-size: 16;
-$s-Font-lineheight: 1.6;
+$font-family: "korolev",sans-serif;
+$font-size: 16;
+$font-lineheight: 1.6;
 
 // Base colours ---- s represents 'Site' //
-$s-Color-white: #FFFFFF;
-$s-Color-black: #2f2f2f;
-$s-Color-base: #61459b;
-$s-Color-comp: #326e50;
-$s-Color-grey: #CCCCCC;
+$white: #FFFFFF;
+$black: #0a0e14;
+$green: #a2cd58;
+$blue: #1b4b97;
+$orange: #f2a927;
+$grey: #dedfdf;
 
 //links
-$s-Color_link: blue;
-$s-Color_link-focus: green;
-$s-Color_link-hover: purple;
+$s-Color_link: $green;
+$s-Color_link-focus: adjust-hue($green,-10deg);
+$s-Color_link-hover: adjust-hue($green,-10deg);

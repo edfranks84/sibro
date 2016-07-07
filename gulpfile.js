@@ -93,7 +93,7 @@ gulp.task('imagemin', function() {
   gulp.src(imgSrc)
     .pipe(changed(imgSrc))
     .pipe(imagemin())
-    .pipe(notify("Images minified"))
+    //.pipe(notify("Images minified"))
     .pipe(gulp.dest(imgSrc));
 });
 
@@ -137,7 +137,12 @@ gulp.task('sass', function() {
 gulp.task('svgstore', function () {
     return gulp
         .src('assets/images/svgsprite/*.svg')
-        .pipe(svgmin())
+        //.pipe(svgmin())
+        .pipe(svgmin({
+            plugins: [{
+                removeEmptyContainers: true
+            }]
+        }))
         .pipe(cheerio({
             run: function ($) {
                 $('[fill]').removeAttr('fill');
@@ -152,6 +157,11 @@ gulp.task('svgmin', function() {
     return gulp.src('assets/images/svg/*.svg')
       .pipe(plumber())
         .pipe(svgmin())
+        // .pipe(svgmin({
+        //     plugins: [{
+        //         removeEmptyContainers: true
+        //     }]
+        // }))
         .pipe(gulp.dest('assets/images/svg'))
         .pipe(notify({message: 'svgs minified!'}));
 });

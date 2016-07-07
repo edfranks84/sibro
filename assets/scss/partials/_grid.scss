@@ -51,16 +51,26 @@ $grid-width: $max-width;
 
 // set basics followed by customs 
 $BREAKPOINTS: (
+  0to1100: (0px 1100px),
   tiny: 320px,
+  340: 340px,
   480: 480px,
+  550: 550px,
   640: 640px,
   700: 700px,
   768: 768px,
   768to920: (768px 920px),
+  nav: 790px,
+  800: 800px,
+  840: 840px,
   920: 920px,
+  1000: 1000px,
+  1024: 1024px,
+  1100: 1100px,
   1200: 1200px,
   1250: 1250px,
   1260: 1260px,
+  1300: 1300px,
 );
 
 .contain{

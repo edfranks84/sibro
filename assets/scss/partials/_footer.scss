@@ -1,0 +1,55 @@
+.footer{
+	background-color: $black;
+	padding: 0.75em 0;
+	@include clearfix;
+	display: flex;
+	align-items: center;
+	.container>div{
+		// float: left;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+	}
+	&__info{
+		// width: 6.5em;
+		color: #fff;
+		width: 100%;
+		@include respond-to(550){
+			width: 6.5em;
+			text-align: left;
+		}
+	}
+	&__logo{
+		// width: calc(100% - 15em);
+		text-align: center;
+		width: 100%;
+		margin: 1em 0;
+		@include respond-to(550){
+			width: calc(100% - 15em);
+			margin: 0;
+		}
+		a{
+			width: 9.5em;
+			display: inline-block;
+		}
+	}
+	&__social{
+		//float: right;
+		// text-align: right;
+		//width: 7.5em;
+		width: 100%;
+		@include respond-to(550){
+			width: 7.5em;
+			text-align: right;
+		}
+		svg{
+			fill: #fff;
+		}
+		.social-icon{
+			display: inline-block;
+			width: 28%;
+			max-width: 3em;
+			margin: 0 1%;
+		}
+	}
+}
